@@ -1,0 +1,80 @@
+.body-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.body-map svg {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  display: block;
+}
+
+.body-map__switch {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--region);
+}
+
+.body-map__switch button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-width: 5.5rem;
+  justify-content: center;
+  padding: 0.375rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.body-map__switch button[aria-pressed='true'] {
+  background: var(--bg);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.body-map__switch button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+
+.body-map__badge {
+  min-width: 1.25rem;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+}
+
+.body-map__region {
+  cursor: pointer;
+  fill: var(--region);
+  stroke: var(--bg);
+  stroke-width: 1.5;
+  transition: fill 120ms ease;
+  outline: none;
+}
+
+.body-map__region:hover {
+  fill: var(--region-hover);
+}
+
+.body-map__region[aria-checked='true'] {
+  fill: var(--accent);
+}
+
+.body-map__region:focus-visible {
+  stroke: var(--focus);
+  stroke-width: 3;
+}
