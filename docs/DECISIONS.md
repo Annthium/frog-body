@@ -34,3 +34,13 @@ Disclaimer in-app plus static crisis-resources link. No diagnostic language in i
 
 ## 009 - Stable string IDs for regions/emotions/qualities
 Decouples stored data from SVG paths and labels, so the body can be redrawn or relabeled without migration.
+
+## 010 - Left/right sides share one region; placeholder body drawing
+Keeps the region list short (20) and insights readable. The body map is drawn from simple
+shapes in geometry.ts so work isn't blocked on the asset decision.
+Revisit: if users want to tell left from right, or when a proper body-map asset is chosen.
+
+## 011 - One body figure with a Front/Back switch
+Replaces side-by-side views: the figure stays large enough to tap on phones. A badge on the
+inactive side shows how many of its regions are selected, so back selections aren't forgotten.
+Revisit: if testing shows people miss the back view.
