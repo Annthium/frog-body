@@ -82,8 +82,8 @@ docs/            PROJECT.md, DECISIONS.md
 
 ## Build order
 1. ~~Scaffold + SVG body map with region selection~~ (done, placeholder drawing)
-2. ~~Check-in form + Dexie persistence~~ (done, emotion picker as rows of chips)
-   2b. Feelings wheel: circular emotion picker, one layer at a time
+2. ~~Check-in form + Dexie persistence~~ (done)
+   2b. ~~Feelings wheel: circular emotion picker, one layer at a time~~ (done)
 3. History list
 4. Insights functions + heatmap view
 5. Export/delete, PWA, disclaimer + crisis link

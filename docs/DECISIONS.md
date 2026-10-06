@@ -56,3 +56,9 @@ Revisit: when adding a third layer, or if disgust/surprise are wanted.
 Zero regions is valid data ("noticed nothing"). Note capped at 140 chars. After saving, show a
 confirmation and clear the form. Emotion picker ships as chip rows first; the wheel layout is step 2b.
 Revisit: when History exists (maybe go there after saving).
+
+## 014 - Feelings wheel interaction
+One ring of wedges at a time. Tapping a broad emotion selects it (a complete answer) and shows its
+specific emotions; tapping the centre goes back without losing the choice. Each broad emotion has
+its own hue, shared by its specific emotions, so insights can reuse the colours later.
+Revisit: if a third layer is added, or wedges get too narrow for longer word lists.

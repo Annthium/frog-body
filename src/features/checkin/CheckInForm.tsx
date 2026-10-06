@@ -1,7 +1,7 @@
 import { useMemo, useState, type FormEvent } from 'react';
 import { BodyMap } from '../../components/BodyMap';
 import type { CheckIn } from '../../domain';
-import { EmotionPicker } from './EmotionPicker';
+import { EmotionWheel } from './EmotionWheel';
 import { SensationList } from './SensationList';
 import {
   EMPTY_DRAFT,
@@ -48,7 +48,7 @@ export function CheckInForm({ onSave }: Props) {
 
   return (
     <form className="checkin" onSubmit={submit}>
-      <EmotionPicker value={draft.emotion} onChange={(emotion) => edit(() => ({ emotion }))} />
+      <EmotionWheel value={draft.emotion} onChange={(emotion) => edit(() => ({ emotion }))} />
 
       <fieldset>
         <legend>Where do you notice it?</legend>
