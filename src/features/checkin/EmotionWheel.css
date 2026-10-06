@@ -1,0 +1,144 @@
+/* One hue per broad emotion; specific emotions share their parent's hue.
+   Light theme hues are dark enough for white text when selected. */
+:root {
+  --hue-joyful: #b0741a;
+  --hue-peaceful: #3a8467;
+  --hue-sad: #4a6fad;
+  --hue-angry: #bb4c3b;
+  --hue-scared: #8459ab;
+  --hue-drained: #756e63;
+  --on-hue: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hue-joyful: #e2b061;
+    --hue-peaceful: #7cc3a5;
+    --hue-sad: #90b0e2;
+    --hue-angry: #eb8c7c;
+    --hue-scared: #bf9ade;
+    --hue-drained: #b5ada0;
+    --on-hue: #1c1b1a;
+  }
+}
+
+[data-hue='joyful'] { --hue: var(--hue-joyful); }
+[data-hue='peaceful'] { --hue: var(--hue-peaceful); }
+[data-hue='sad'] { --hue: var(--hue-sad); }
+[data-hue='angry'] { --hue: var(--hue-angry); }
+[data-hue='scared'] { --hue: var(--hue-scared); }
+[data-hue='drained'] { --hue: var(--hue-drained); }
+
+.emotion-wheel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emotion-wheel__svg {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.emotion-wheel__svg text {
+  text-anchor: middle;
+  dominant-baseline: central;
+  font-size: 15px;
+  fill: var(--text);
+  pointer-events: none;
+  user-select: none;
+}
+
+.emotion-wheel__svg text.is-small {
+  font-size: 13px;
+}
+
+.emotion-wheel__wedge {
+  cursor: pointer;
+  outline: none;
+}
+
+.emotion-wheel__wedge path {
+  fill: color-mix(in srgb, var(--hue) 22%, var(--bg));
+  stroke: var(--bg);
+  stroke-width: 3;
+  transition: fill 120ms ease;
+}
+
+.emotion-wheel__wedge:hover path {
+  fill: color-mix(in srgb, var(--hue) 38%, var(--bg));
+}
+
+.emotion-wheel__wedge[aria-pressed='true'] path {
+  fill: var(--hue);
+}
+
+.emotion-wheel__wedge[aria-pressed='true'] text {
+  fill: var(--on-hue);
+  font-weight: 600;
+}
+
+.emotion-wheel__wedge:focus-visible path {
+  stroke: var(--focus);
+  stroke-width: 4;
+}
+
+.emotion-wheel__centre circle {
+  fill: var(--bg);
+  stroke: var(--region);
+  stroke-width: 1.5;
+}
+
+.emotion-wheel__centre.is-button {
+  cursor: pointer;
+  outline: none;
+}
+
+.emotion-wheel__centre.is-button circle {
+  stroke: var(--hue);
+  stroke-width: 2;
+}
+
+.emotion-wheel__centre.is-button:hover circle {
+  fill: color-mix(in srgb, var(--hue) 12%, var(--bg));
+}
+
+.emotion-wheel__centre.is-button:focus-visible circle {
+  stroke: var(--focus);
+  stroke-width: 3;
+}
+
+.emotion-wheel__svg text.is-strong {
+  font-weight: 600;
+}
+
+.emotion-wheel__svg text.is-muted {
+  fill: var(--text-muted);
+  font-size: 13px;
+}
+
+.emotion-wheel__layer {
+  animation: wheel-in 180ms ease-out;
+  transform-origin: 0 0;
+}
+
+@keyframes wheel-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94) rotate(-6deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emotion-wheel__layer {
+    animation: none;
+  }
+}
+
+.emotion-wheel__status {
+  min-height: 1.5rem;
+  margin: 0.75rem 0 !important;
+}

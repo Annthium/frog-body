@@ -44,3 +44,21 @@ Revisit: if users want to tell left from right, or when a proper body-map asset 
 Replaces side-by-side views: the figure stays large enough to tap on phones. A badge on the
 inactive side shows how many of its regions are selected, so back selections aren't forgotten.
 Revisit: if testing shows people miss the back view.
+
+## 012 - Emotions as a two-layer feelings wheel, with our own word list
+Inspired by the Feelings Wheel (Willcox, 1982): 6 broad emotions, each with 4-5 specific ones, plus
+"Not sure" outside the wheel (replaces the "neutral" question). Our own list rather than a published
+wheel's, to avoid licensing questions. A check-in stores the most specific emotion chosen;
+insights roll up with getCoreEmotion().
+Revisit: when adding a third layer, or if disgust/surprise are wanted.
+
+## 013 - Check-in rules: only emotion is required
+Zero regions is valid data ("noticed nothing"). Note capped at 140 chars. After saving, show a
+confirmation and clear the form. Emotion picker ships as chip rows first; the wheel layout is step 2b.
+Revisit: when History exists (maybe go there after saving).
+
+## 014 - Feelings wheel interaction
+One ring of wedges at a time. Tapping a broad emotion selects it (a complete answer) and shows its
+specific emotions; tapping the centre goes back without losing the choice. Each broad emotion has
+its own hue, shared by its specific emotions, so insights can reuse the colours later.
+Revisit: if a third layer is added, or wedges get too narrow for longer word lists.
